@@ -3,7 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <script defer src="app.js"></script>
     <title>Library</title>
   </head>
-  <body></body>
+  <body>
+    <div class="sidenav" id="sidenav">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+
+      <!-- Form -->
+      <form id="book-form">
+        <h2 class="form-title">Add a Book</h2>
+        <input type="text" id="title" placeholder="Title" required />
+        <input type="text" id="author" placeholder="Author" required />
+        <input type="number" id="pages" placeholder="Pages" required />
+        <div class="readcheckbox">
+          <label for="read">Read:</label>
+          <input type="checkbox" id="read" name="read" />
+        </div>
+        <button type="submit">Add Book</button>
+      </form>
+    </div>
+  </body>
 </html>
