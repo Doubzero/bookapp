@@ -2,6 +2,8 @@ const addBookBtn = document.getElementById("addBookBtn");
 
 let library = [];
 
+addBookBtn.addEventListener("click", addBookFromForm);
+
 function Book(title, author, pages, isRead) {
   this.title = title;
   this.author = author;
@@ -21,11 +23,10 @@ function addBookFromForm(e) {
 
   addBookToLibrary(title, author, pages, isRead);
 
+  // resets form values to orginal placeholders
   document.getElementById("title").value = "";
   document.getElementById("author").value = "";
   document.getElementById("pages").value = "";
   document.getElementById("isRead").checked = false;
-  e.preventDefault();
+  e.preventDefault(); //prevents form from submitting.
 }
-
-addBookBtn.addEventListener("click", addBookFromForm);
