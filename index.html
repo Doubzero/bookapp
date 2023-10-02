@@ -3,43 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/d6114d810a.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./styles/styles.css" />
     <script defer src="app.js"></script>
     <title>Library</title>
   </head>
   <body>
-    <div class="sidenav" id="sidenav">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Contact</a>
+    <div class="page-wrapper">
+      <div class="sidenav" id="sidenav">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
 
-      <!-- Form -->
-      <form id="book-form">
-        <h2 class="form-title">Add a Book</h2>
-        <input type="text" id="title" placeholder="Title" required />
-        <input type="text" id="author" placeholder="Author" required />
-        <input type="number" id="pages" placeholder="Pages" required />
-        <div class="readcheckbox">
-          <label for="read">Read:</label>
-          <input type="checkbox" id="isRead" name="read" />
-        </div>
-        <button id="addBookBtn" type="submit">Add Book</button>
-      </form>
-    </div>
-    <div id="library-container">
-      <table id="books-list">
-        <thead id="book-requirements">
-          <tr>
-            <td>TITLE</td>
-            <td>AUTHOR</td>
-            <td>PAGES</td>
-            <td>STATUS</td>
-            <td>REMOVAL</td>
-          </tr>
-        </thead>
-        <tbody id="table-body"></tbody>
-      </table>
+        <!-- Form -->
+        <form id="book-form">
+          <h2 class="form-title">Add a Book</h2>
+          <input type="text" id="title" placeholder="Title" required />
+          <input type="text" id="author" placeholder="Author" required />
+          <input type="number" id="pages" placeholder="Pages" required />
+          <div class="readcheckbox">
+            <label for="read">Read:</label>
+            <input type="checkbox" id="isRead" name="read" />
+          </div>
+          <button id="addBookBtn" type="submit">Add Book</button>
+        </form>
+      </div>
+      <div id="library-container">
+        <table id="books-list">
+          <thead id="book-header">
+            <tr>
+              <td class="table-title">TITLE</td>
+              <td>AUTHOR</td>
+              <td>PAGES</td>
+              <td>STATUS</td>
+              <td>REMOVAL</td>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
     </div>
   </body>
 </html>
