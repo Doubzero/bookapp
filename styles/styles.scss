@@ -7,18 +7,20 @@
 body {
   font-family: Arial, sans-serif;
 }
-
+.page-wrapper {
+  display: flex;
+  height: 100vh;
+}
 .sidenav {
   display: flex;
   flex-direction: column;
   text-align: center;
-  position: absolute;
+  // position: absolute;
   height: 100%;
   width: 250px;
-  position: fixed;
+
   background-color: #333;
   padding-top: 20px;
-  z-index: 3;
 
   a {
     padding: 15px 25px;
@@ -37,6 +39,8 @@ body {
 /* Form styles */
 .sidenav form {
   padding: 20px;
+  position: sticky;
+  z-index: 4;
   display: flex;
   flex-direction: column;
   input[type="text"],
@@ -72,19 +76,10 @@ body {
   }
 }
 #library-container {
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  float: right;
-  justify-content: center;
+  margin: 0 auto;
 }
-#books-list {
-  display: flex;
 
-  justify-content: center;
-  flex-direction: column;
-  margin-left: 200px;
-}
 #books-list td {
-  padding: 25px;
+  padding: 50px;
+  overflow: auto;
 }
