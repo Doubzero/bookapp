@@ -54,7 +54,7 @@ function addBooksToTable() {
     const bookPages = document.createElement("td");
     bookPages.textContent = book.pages;
 
-    //Status for read or not
+    // Status for read or not
     const bookStatus = document.createElement("td");
     const statusSymbol = document.createElement("i");
     statusSymbol.classList.add("fa");
@@ -65,7 +65,7 @@ function addBooksToTable() {
     }
     bookStatus.appendChild(statusSymbol);
 
-    //remove book row icon
+    // remove book row icon
     const trashRow = document.createElement("td");
     const trashSymbol = document.createElement("i");
     trashSymbol.classList.add("fa", "fa-trash");
@@ -90,6 +90,7 @@ table.addEventListener("click", function (e) {
   const clickedElement = e.target;
   const row = clickedElement.closest("tr");
   const rowIndex = row.rowIndex - 1;
+
   // Check if the clicked element is an <i> element with the "fa" class
   if (
     clickedElement.tagName === "I" &&
