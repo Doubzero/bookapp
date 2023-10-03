@@ -51,9 +51,62 @@ function addBooksToTable() {
     bookTitle.textContent = book.title;
     const bookAuthor = document.createElement("td");
     bookAuthor.textContent = book.author;
+    const bookPages = document.createElement("td");
+    bookPages.textContent = book.pages;
+
+    //Status for read or not
+    const bookStatus = document.createElement("td");
+    const statusSymbol = document.createElement("i");
+    statusSymbol.classList.add("fa");
+    if (book.isRead === false) {
+      statusSymbol.classList.add("fa-times");
+    } else {
+      statusSymbol.classList.add("fa-check");
+    }
+    bookStatus.appendChild(statusSymbol);
+
+    //remove book row icon
+    const trashRow = document.createElement("td");
+    const trashSymbol = document.createElement("i");
+    trashSymbol.classList.add("fa", "fa-trash");
+    trashRow.appendChild(trashSymbol);
 
     bookRow.appendChild(bookTitle);
     bookRow.appendChild(bookAuthor);
+    bookRow.appendChild(bookPages);
+    bookRow.appendChild(bookStatus);
+    bookRow.appendChild(trashRow);
     tableBody.appendChild(bookRow);
   }
 }
+function updateIsRead(bookindex) {
+  library[bookindex].isRead = !library[bookindex].isRead;
+}
+// Event listen for status click
+const table = document.getElementById("books-list");
+
+// Add an event listener to the table to handle clicks on the status symbols
+table.addEventListener("click", function (e) {
+  const clickedElement = e.target;
+  const row = clickedElement.closest("tr");
+  const rowIndex = row.rowIndex - 1;
+  // Check if the clicked element is an <i> element with the "fa" class
+  if (
+    clickedElement.tagName === "I" &&
+    clickedElement.classList.contains("fa")
+  ) {
+    // Toggle the class for the clicked element to change the icon
+    if (clickedElement.classList.contains("fa-check")) {
+      clickedElement.classList.remove("fa-check");
+      clickedElement.classList.add("fa-times");
+      updateIsRead(rowIndex); // change isRead value to false
+    } else if (clickedElement.classList.contains("fa-times")) {
+      clickedElement.classList.remove("fa-times");
+      clickedElement.classList.add("fa-check");
+      updateIsRead(rowIndex); // change isRead value to true
+    } else if (clickedElement.classList.contains("fa-trash")) {
+      library.splice(rowIndex, 1);
+      row.remove();
+    }
+  }
+});
