@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Caprasimo&family=Inter:wght@400;700&family=Roboto&family=Young+Serif&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -82,15 +84,21 @@ body {
 #books-list td {
   padding: 50px 50px 0px 50px;
   overflow: auto;
-
   text-align: center;
 }
 thead {
   tr {
     td {
-      font-size: 1.5rem;
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-weight: bold;
+      font-size: 1.2rem;
+      font-family: "Young Serif";
+      border-bottom: 1px dashed #555;
+    }
+  }
+}
+tbody {
+  tr {
+    td {
+      font-family: "Young Serif";
     }
   }
 }
