@@ -25,7 +25,7 @@ function addBookFromForm(e) {
 
   addBookToLibrary(title, author, pages, isRead);
 
-  // resets form values to orginal placeholders
+  // Resets form values to orginal placeholders
   document.getElementById("title").value = "";
   document.getElementById("author").value = "";
   document.getElementById("pages").value = "";
@@ -34,8 +34,8 @@ function addBookFromForm(e) {
 
 function addBooksToTable() {
   const tableBody = document.getElementById("table-body");
+  // Clear the existing content in the table body. My understanding is that because we keep creating elements, the data attributes or div sizes keep getting larger and makes the spaceing unequal. I included this because it works, not because my logic says it works.
   tableBody.innerHTML = "";
-  // Clear the existing content in the table body
 
   for (let i = 0; i < library.length; i += 1) {
     const book = library[i];
@@ -65,7 +65,7 @@ function addBooksToTable() {
     }
     bookStatus.appendChild(statusSymbol);
 
-    // remove book row icon
+    // Remove book row icon
     const trashRow = document.createElement("td");
     const trashSymbol = document.createElement("i");
     trashSymbol.classList.add("fa", "fa-trash");
